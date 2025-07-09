@@ -4,7 +4,7 @@ e.preventDefault();
 const form = e.target;
 const data = new URLSearchParams(new FormData(form));
 
-const response = await fetch('/contact', {
+const response = await fetch('/contacts', {
     method: 'POST',
     body: data,
     hearders: { 'Content-Type': 'application/x-www-form-urlencoded'}

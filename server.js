@@ -16,7 +16,7 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
   if(err){
-    console.log("koneksi database gagal:",err.message);
+    console.log("koneksi database gagal:");
     process.exit();
   }
 
@@ -36,7 +36,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { 'content-type': contentType});
       res.end(content);
     });
-  }else if(req.method === 'POST' && req.url === '/contact'){
+  }else if(req.method === 'POST' && req.url === '/contacts'){
     let body = '';
     req.on('data', chunk => body += chunk);
     req.on('end', () => {
